@@ -18,12 +18,10 @@
       <a href="#nosotros">Sobre nosotros</a>
       <a href="#contacto">Contáctanos</a>
     </nav>
-    <div class="menu-toggle" id="menu-toggle">
-      ☰
-    </div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
   </header>
 
-  <!-- Hero principal con clases nuevas -->
+  <!-- Hero principal -->
   <section class="hero">
     <img src="medios/Recurso3.png" alt="Productos Win Publicidad" class="hero-img uno" />
     <img src="medios/Recurso 4.svg" alt="copy Win Publicidad" class="hero-img dos" />
@@ -61,7 +59,7 @@
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animación al hacer scroll en secciones
+    // Scroll animation para secciones
     gsap.utils.toArray(".contenido").forEach((section) => {
       gsap.from(section, {
         scrollTrigger: {
@@ -74,7 +72,7 @@
       });
     });
 
-    // Animación inicial de imágenes del hero
+    // Animación de entrada en el hero
     gsap.from(".hero-img.uno", {
       opacity: 0,
       y: -50,
@@ -90,7 +88,8 @@
       ease: "power2.out"
     });
 
-    // Toggle menu
+
+    // Menú responsive
     const toggle = document.getElementById('menu-toggle');
     const nav = document.querySelector('nav');
     toggle.addEventListener('click', () => {
