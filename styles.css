@@ -135,7 +135,7 @@ nav a:hover {
 }
 
 /* MEDIA QUERIES para dispositivos pequeños */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   header {
     flex-direction: row;
     padding: 5px 20px;
