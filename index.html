@@ -8,25 +8,26 @@
 </head>
 <body>
 
-
   <!-- Header -->
   <header>
     <div class="logo">
       <img src="medios/logo.png" alt="Logo Win Publicidad" />
     </div>
-    <nav>
+    <nav class="menu">
       <a href="#servicios">Nuestros servicios</a>
       <a href="#nosotros">Sobre nosotros</a>
       <a href="#contacto">Contáctanos</a>
     </nav>
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
   </header>
 
-  <!-- Hero principal -->
+  <!-- Hero principal con clases nuevas -->
   <section class="hero">
-    <img src="medios/Recurso3.png" alt="Productos Win Publicidad" />
-    <img src="medios/Recurso 4.svg" alt="copy Win Publicidad" />
+    <img src="medios/Recurso3.png" alt="Productos Win Publicidad" class="hero-img uno" />
+    <img src="medios/Recurso 4.svg" alt="copy Win Publicidad" class="hero-img dos" />
   </section>
-
 
   <!-- Sección: Nuestros Servicios -->
   <section id="servicios" class="contenido">
@@ -38,7 +39,7 @@
   <!-- Sección: Sobre Nosotros -->
   <section id="nosotros" class="contenido">
     <h2>Sobre Nosotros</h2>
-    <p>En Win Publicidad somos expertos en crear experiencias visuales impactantes. Más de 10 años de experiencia en el mercado publicitario nos respaldan.</p>
+    <p>En Win Publicidad somos expertos en crear experiencias visuales impactantes.</p>
     <img src="medios/nosotros.jpg" alt="Equipo de Win Publicidad" />
   </section>
 
@@ -54,11 +55,13 @@
     </form>
   </section>
 
-  <!-- Scripts de animación -->
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script>
     gsap.registerPlugin(ScrollTrigger);
+
+    // Animación al hacer scroll en secciones
     gsap.utils.toArray(".contenido").forEach((section) => {
       gsap.from(section, {
         scrollTrigger: {
@@ -69,6 +72,29 @@
         y: 50,
         duration: 1
       });
+    });
+
+    // Animación inicial de imágenes del hero
+    gsap.from(".hero-img.uno", {
+      opacity: 0,
+      y: -50,
+      duration: 1.2,
+      ease: "power2.out"
+    });
+
+    gsap.from(".hero-img.dos", {
+      opacity: 0,
+      y: 50,
+      duration: 1.2,
+      delay: 0.3,
+      ease: "power2.out"
+    });
+
+    // Toggle menu
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
     });
   </script>
 
