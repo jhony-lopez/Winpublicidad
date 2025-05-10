@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Win Publicidad</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="medios/logo.png" alt="Logo Win Publicidad" />
+    </div>
+    <nav>
+      <a href="#servicios">Nuestros servicios</a>
+      <a href="#nosotros">Sobre nosotros</a>
+      <a href="#contacto">Contáctanos</a>
+    </nav>
+  </header>
+
+  <!-- Hero principal -->
+  <section class="hero">
+    <img src="medios/Recurso3.png" alt="Productos Win Publicidad" />
+    <img src="medios/Recurso 4.svg" alt="copy Win Publicidad" />
+  </section>
+
+
+  <!-- Sección: Nuestros Servicios -->
+  <section id="servicios" class="contenido">
+    <h2>Nuestros Servicios</h2>
+    <p>Diseñamos y fabricamos stands para ferias, realizamos impresiones de gran formato, material publicitario y más.</p>
+    <img src="medios/servicios.jpg" alt="Servicios de Win Publicidad" />
+  </section>
+
+  <!-- Sección: Sobre Nosotros -->
+  <section id="nosotros" class="contenido">
+    <h2>Sobre Nosotros</h2>
+    <p>En Win Publicidad somos expertos en crear experiencias visuales impactantes. Más de 10 años de experiencia en el mercado publicitario nos respaldan.</p>
+    <img src="medios/nosotros.jpg" alt="Equipo de Win Publicidad" />
+  </section>
+
+  <!-- Sección: Contáctanos -->
+  <section id="contacto" class="contenido contacto">
+    <h2>Contáctanos</h2>
+    <p>¿Listo para hacer visible tu marca? Escríbenos:</p>
+    <form>
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Tu correo" required />
+      <textarea placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Scripts de animación -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".contenido").forEach((section) => {
+      gsap.from(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1
+      });
+    });
+  </script>
+
+</body>
+</html>
+
